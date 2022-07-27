@@ -27,8 +27,9 @@
         <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
       </li>
 
+      <%# https://stackoverflow.com/questions/6567863/no-route-matches-get-users-sign-out %>
       <li class="nav-item">
-       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link" %>
+       <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link" %>
       </li>
 
       <li class="nav-item">
