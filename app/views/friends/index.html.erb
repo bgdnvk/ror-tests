@@ -1,18 +1,24 @@
 # <p style="color: green"><%= notice %></p>
 
-<h1>Friend List</h1>
+<% if user_signed_in?%>
 
-<div id="friends">
-  <% @friends.each do |friend| %>
+  <h1>Friend List</h1>
 
-    <% #current user is from devise%>
-    <% if friend.user === current_user %>
-    <%= render friend %>
-    <p>
-      <%= link_to "Show this friend", friend %>
-    </p>
-    <% end%> 
-  <% end %>
-</div>
+  <div id="friends">
+    <% @friends.each do |friend| %>
 
-<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+      <% #current user is from devise%>
+      <% if friend.user === current_user %>
+      <%= render friend %>
+      <p>
+        <%= link_to "Show this friend", friend %>
+      </p>
+      <% end%> 
+    <% end %>
+  </div>
+
+  <%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+
+<% else %>
+  <h1>Sign in to see your friends</h1>
+<% end %>
