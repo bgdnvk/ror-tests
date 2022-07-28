@@ -4,6 +4,8 @@
 
 <div id="friends">
   <% @friends.each do |friend| %>
+
+    <% #current user is from devise%>
     <% if friend.user === current_user %>
     <%= render friend %>
     <p>
