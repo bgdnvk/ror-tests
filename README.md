@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+For those having trouble with tzinfo-data:
+1. gem uninstall tzinfo-data
+2. In the Gemfile, replace 'gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]' to just gem "tzinfo-data"
+3. bundle install
